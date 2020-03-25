@@ -1,0 +1,3 @@
+C:/Users/hp/Desktop/cpp_begining/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/hp/Desktop/cpp_begining/out/build/x64-Debug/CMakeFiles/cpp_begining.dir
+C:/Users/hp/Desktop/cpp_begining/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

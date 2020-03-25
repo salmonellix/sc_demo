@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/hp/Desktop/cpp_begining/main.cpp
+iostream
+-
+thread
+-
+vector
+-
+mutex
+-
+chrono
+-
+atomic
+-
+

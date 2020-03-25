@@ -1,0 +1,12 @@
+# ninja log v5
+1	577	606784477	CMakeFiles/cpp_begining.dir/Log.cpp.obj	c420be439e4543c5
+6	709	606784477	CMakeFiles/cpp_begining.dir/main.cpp.obj	6b84697984d916ac
+709	1191	606784478	cpp_begining.exe	cdb678d5dec2b69c
+1	970	606785393	CMakeFiles/cpp_begining.dir/main.cpp.obj	6b84697984d916ac
+971	1190	606785393	cpp_begining.exe	cdb678d5dec2b69c
+0	604	606785652	CMakeFiles/cpp_begining.dir/main.cpp.obj	6b84697984d916ac
+604	874	606785652	cpp_begining.exe	cdb678d5dec2b69c
+1	1091	606788579	CMakeFiles/cpp_begining.dir/main.cpp.obj	6b84697984d916ac
+1092	1396	606788579	cpp_begining.exe	cdb678d5dec2b69c
+1	1295	606790319	CMakeFiles/cpp_begining.dir/main.cpp.obj	6b84697984d916ac
+1296	1575	606790319	cpp_begining.exe	cdb678d5dec2b69c
