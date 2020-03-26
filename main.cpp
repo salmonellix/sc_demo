@@ -7,41 +7,38 @@
 
 // zmienne z podkreślinikiem, clasy duża litera camel, funkcje mała camel
 // global function:
-
 void globalFun(std::string add_text){
 
     std::thread::id threads_id = std::this_thread::get_id();
-    std::cout << "Thread id: " << threads_id << " - Text: " << add_text << "\n" << std::endl;;
+    std::cout << "Thread id: " << threads_id << " - Text: "
+    << add_text << "\n" << std::endl;;
 }
 
 // class method
-
 class ClassMethod
 {
 public:
     void makeThread(std::string add_text_m){
 
         std::thread::id threads_id = std::this_thread::get_id();
-        std::cout << "Thread id: " << threads_id << " - Text: " << add_text_m << "\n" << std::endl;;
+        std::cout << "Thread id: " << threads_id << " - Text: "
+        << add_text_m << "\n" << std::endl;;
     }
 };
 
 // function object
-
 class ObjectFunctor{
 
 public:
     void operator() (std::string add_text_f){
 
         std::thread::id threads_id = std::this_thread::get_id();
-        std::cout << "Thread id: " << threads_id << " - Text: " << add_text_f << "\n" << std::endl;;
-
+        std::cout << "Thread id: " << threads_id << " - Text: "
+        << add_text_f << "\n" << std::endl;;
     }
-
 };
 
 void firstTask(){
-
     std::cout << "> ----- FIRST TASK ----- <" << std::endl;
     std::thread first(globalFun, "Global Function");
     first.join();
@@ -93,12 +90,20 @@ void secondTask(){
 }
 
 // zad 3
-int var1 = 0;
-int incrementMutex(int var){
 
+int increment(int var){
     for (int i =0; i <10000000; i++){
         var++;
     }
+    return var;
+}
+
+int incrementMutex(int var){
+    m.lock();
+    for (int i =0; i <10000000; i++){
+        var++;
+    }
+    m.unlock();
     return var;
 }
 
@@ -108,51 +113,68 @@ int incrementAtomic(){
     for (int i =0; i <10000000; i++){
         var2++;
     }
-    return var2.load();
+    return var2;
 }
 
-void thirdTask(){
+    void thirdTask(){
 
-    std::cout << "> ----- THIRD TASK ----- <" << std::endl;
-    // atomic
-    auto start = std::chrono::steady_clock::now();
-    std::vector<std::thread> threads(10);
-    for (int i = 0; i <10; i++){
-        threads[i] = std::thread(incrementAtomic);
-    }
-    for (auto & i : threads){
-        i.join();
-    }
+        std::cout << "> ----- THIRD TASK ----- <" << std::endl;
+        // atomic
+        auto start = std::chrono::steady_clock::now();
+        std::vector<std::thread> threads(10);
+        for (int i = 0; i <10; i++){
+            threads[i] = std::thread(incrementAtomic);
+        }
+        for (auto & i : threads){
+            i.join();
+        }
 
-    auto end = std::chrono::steady_clock::now();
-    std::chrono::duration<double> time = end-start;
-    std::cout << "time: " << time.count() << "s\n";
-    std::cout << "var2 : " << var2 << std::endl;
+        auto end = std::chrono::steady_clock::now();
+        std::chrono::duration<double> time = end-start;
+        std::cout << "time atomic: " << time.count() << "s\n";
+        std::cout << "var1 : " << var2 << std::endl;
 
 // mutex
-    auto start2 = std::chrono::steady_clock::now();
-    std::vector<std::thread> threads2(10);
-    for (int i = 0; i <10; i++){
-        threads2[i] = std::thread(incrementMutex, var1);
+        int var1 = 0;
+        auto start2 = std::chrono::steady_clock::now();
+        std::vector<std::thread> threads2(10);
+        for (int i = 0; i <10; i++){
+            threads2[i] = std::thread(incrementMutex, var1);
+        }
+        for (auto & i : threads2){
+            i.join();
+        }
+
+        auto end2 = std::chrono::steady_clock::now();
+        std::chrono::duration<double> time2 = end2-start2;
+        std::cout << "time mutex: " << time2.count() << "s\n";
+        std::cout << "var1 : " << var1 << std::endl;
+
+
+        // normal
+        int var2 = 0;
+        auto start3 = std::chrono::steady_clock::now();
+        std::vector<std::thread> threads3(10);
+        for (int i = 0; i <10; i++){
+            threads3[i] = std::thread(increment, var2);
+        }
+        for (auto & i : threads3){
+            i.join();
+        }
+
+        auto end3 = std::chrono::steady_clock::now();
+        std::chrono::duration<double> time3 = end3-start3;
+        std::cout << "time normal: " << time3.count() << "s\n";
+        std::cout << "var2 : " << var2 << std::endl;
     }
-    for (auto & i : threads2){
-        i.join();
-    }
-
-    auto end2 = std::chrono::steady_clock::now();
-    std::chrono::duration<double> time2 = end2-start2;
-    std::cout << "time: " << time2.count() << "s\n";
-    std::cout << "var1 : " << var1 << std::endl;
-}
 
 
+    int main() {
 
-int main() {
-
-    firstTask();
-    secondTask();
-    thirdTask();
-    std::cin.get();
-    std::cin.get();
-    return 0;
+        firstTask();
+        secondTask();
+        thirdTask();
+        std::cin.get();
+        std::cin.get();
+        return 0;
 }

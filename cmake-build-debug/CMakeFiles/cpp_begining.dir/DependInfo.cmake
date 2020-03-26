@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/hp/Desktop/cpp_begining/Log.cpp" "C:/Users/hp/Desktop/cpp_begining/cmake-build-debug/CMakeFiles/cpp_begining.dir/Log.cpp.obj"
+  "C:/Users/hp/Desktop/cpp_begining/functions.cpp" "C:/Users/hp/Desktop/cpp_begining/cmake-build-debug/CMakeFiles/cpp_begining.dir/functions.cpp.obj"
   "C:/Users/hp/Desktop/cpp_begining/main.cpp" "C:/Users/hp/Desktop/cpp_begining/cmake-build-debug/CMakeFiles/cpp_begining.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")

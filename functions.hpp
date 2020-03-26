@@ -1,0 +1,8 @@
+//
+// Created by hp on 2020-03-26.
+//
+
+#ifndef CPP_BEGINING_FUNCTIONS_HPP
+#define CPP_BEGINING_FUNCTIONS_HPP
+
+#endif //CPP_BEGINING_FUNCTIONS_HPP

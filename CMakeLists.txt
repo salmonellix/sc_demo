@@ -3,4 +3,4 @@ project(cpp_begining)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cpp_begining main.cpp Log.cpp)
+add_executable(cpp_begining main.cpp Log.cpp functions.hpp functions.cpp)

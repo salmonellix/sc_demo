@@ -3,5 +3,7 @@
 
 CMakeFiles\cpp_begining.dir\Log.cpp.obj: ..\Log.cpp
 
+CMakeFiles\cpp_begining.dir\functions.cpp.obj: ..\functions.cpp
+
 CMakeFiles\cpp_begining.dir\main.cpp.obj: ..\main.cpp
 

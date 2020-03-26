@@ -87,6 +87,12 @@
 		<Unit filename="C:/Users/hp/Desktop/cpp_begining/Log.cpp">
 			<Option target="cpp_begining"/>
 		</Unit>
+		<Unit filename="C:/Users/hp/Desktop/cpp_begining/functions.cpp">
+			<Option target="cpp_begining"/>
+		</Unit>
+		<Unit filename="C:/Users/hp/Desktop/cpp_begining/functions.hpp">
+			<Option target="cpp_begining"/>
+		</Unit>
 		<Unit filename="C:/Users/hp/Desktop/cpp_begining/main.cpp">
 			<Option target="cpp_begining"/>
 		</Unit>
